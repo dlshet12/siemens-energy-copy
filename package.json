@@ -1,0 +1,34 @@
+{
+  "name": "ui-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise Web Components design system — framework-agnostic, token-driven, accessible",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "build:tokens": "npm run build -w packages/tokens",
+    "build:core": "npm run build -w packages/core",
+    "dev:core": "npm run dev -w packages/core",
+    "storybook": "npm run storybook -w packages/core",
+    "build:storybook": "npm run build-storybook -w packages/core",
+    "clean": "npm run clean -w packages/core 2>/dev/null; rm -rf node_modules packages/*/node_modules packages/*/dist"
+  },
+  "workspaces": [
+    "packages/tokens",
+    "packages/core",
+    "packages/adapters/react",
+    "packages/adapters/angular",
+    "packages/adapters/vue"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "web-components",
+    "design-system",
+    "lit",
+    "tokens",
+    "accessibility"
+  ],
+  "license": "UNLICENSED"
+}

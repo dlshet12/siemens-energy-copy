@@ -1,0 +1,23 @@
+{
+  "name": "@ui-platform/react",
+  "version": "1.0.0",
+  "description": "React adapters for @ui-platform/core — thin wrappers, stable props",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "peerDependencies": {
+    "@ui-platform/core": "*",
+    "react": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "echo 'Adapter stub — implement wrapper generation or hand-written wrappers'",
+    "clean": "rm -rf dist"
+  }
+}

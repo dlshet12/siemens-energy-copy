@@ -1,0 +1,93 @@
+/**
+ * ui-button — styles from variables.json only.
+ * Load tokens: @ui-platform/tokens/build/tokens.css (or equivalent).
+ */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ui-Primitives-space-8);
+  font-family: var(--ui-Primitives-type-family-base);
+  font-weight: var(--ui-Primitives-type-weight-medium);
+  line-height: var(--ui-Primitives-type-line-87);
+  border: 1px solid transparent;
+  border-radius: var(--ui-Primitives-space-4);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 0 2px var(--ui-Semantics-colors-surface-canvas), 0 0 0 4px var(--ui-Semantics-colors-overlay-ring-0);
+}
+
+.button--sm {
+  padding: var(--ui-Primitives-space-8) var(--ui-Primitives-space-12);
+  font-size: var(--ui-Primitives-type-size-87);
+}
+
+.button--md {
+  padding: var(--ui-Primitives-space-12) var(--ui-Primitives-space-16);
+  font-size: var(--ui-Primitives-type-size-100);
+}
+
+.button--lg {
+  padding: var(--ui-Primitives-space-16) var(--ui-Primitives-space-20);
+  font-size: var(--ui-Primitives-type-size-125);
+}
+
+.button--primary {
+  background-color: var(--ui-Semantics-colors-action-primary-bg);
+  color: var(--ui-Semantics-colors-action-primary-text);
+  border-color: var(--ui-Semantics-colors-action-primary-bg);
+}
+
+.button--primary:hover:not(:disabled) {
+  background-color: var(--ui-Semantics-colors-action-primary-hover-bg);
+  border-color: var(--ui-Semantics-colors-action-primary-hover-bg);
+}
+
+.button--primary:active:not(:disabled) {
+  background-color: var(--ui-Semantics-colors-action-primary-hover-bg);
+  border-color: var(--ui-Semantics-colors-action-primary-hover-bg);
+}
+
+.button--secondary {
+  background-color: var(--ui-Semantics-colors-surface-subtle);
+  color: var(--ui-Semantics-colors-action-secondary-text);
+  border-color: var(--ui-Semantics-colors-divider-default);
+}
+
+.button--secondary:hover:not(:disabled) {
+  background-color: var(--ui-Semantics-colors-surface-canvas);
+  color: var(--ui-Semantics-colors-action-secondary-hover);
+  border-color: var(--ui-Semantics-colors-divider-default);
+}
+
+.button--secondary:active:not(:disabled) {
+  background-color: var(--ui-Semantics-colors-surface-input);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  color: var(--ui-Semantics-colors-text-tertiary);
+}
+
+.button--primary:disabled {
+  background-color: var(--ui-Semantics-colors-action-primary-bg);
+  border-color: var(--ui-Semantics-colors-action-primary-bg);
+}
+
+.button--secondary:disabled {
+  background-color: var(--ui-Semantics-colors-surface-subtle);
+  border-color: var(--ui-Semantics-colors-divider-default);
+}
+
+.button--full-width {
+  width: 100%;
+}

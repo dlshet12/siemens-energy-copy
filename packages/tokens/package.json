@@ -1,0 +1,25 @@
+{
+  "name": "@ui-platform/tokens",
+  "version": "1.0.0",
+  "description": "Design tokens — single source of truth for colors, typography, spacing, motion",
+  "type": "module",
+  "main": "./build/tokens.js",
+  "module": "./build/tokens.js",
+  "types": "./build/tokens.d.ts",
+  "exports": {
+    ".": {
+      "import": "./build/tokens.js",
+      "types": "./build/tokens.d.ts"
+    },
+    "./css": {
+      "import": "./build/tokens.css",
+      "types": "./build/tokens.css.d.ts"
+    }
+  },
+  "files": ["build", "variables.json"],
+  "scripts": {
+    "build": "node build.js",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {}
+}
