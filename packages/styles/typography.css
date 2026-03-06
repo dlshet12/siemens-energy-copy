@@ -1,0 +1,275 @@
+/* ==========================================================================
+   Typography, Spacing, Radius & Grid Tokens
+   Auto-generated from text_radius_spacing__grid.json
+   ========================================================================== */
+
+:root {
+
+  /* ── Font Family ── */
+  --font-family: "DM Sans", sans-serif;
+
+  /* ── Font Weights ── */
+  --font-weight-light: 300; /* Light weight */
+  --font-weight-regular: 400; /* Regular weight */
+  --font-weight-medium: 500; /* Medium weight */
+  --font-weight-semi-bold: 600; /* Semi-bold weight */
+  --font-weight-bold: 700; /* Bold weight */
+
+  /* ── Font Sizes ── */
+  --font-size-8: 8px;
+  --font-size-10: 10px;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-32: 32px;
+  --font-size-36: 36px;
+  --font-size-40: 40px;
+  --font-size-44: 44px;
+  --font-size-48: 48px;
+  --font-size-52: 52px;
+  --font-size-56: 56px;
+  --font-size-60: 60px;
+  --font-size-64: 64px;
+  --font-size-72: 72px;
+  --font-size-80: 80px;
+  --font-size-88: 88px;
+  --font-size-96: 96px;
+
+  /* ── Line Heights ── */
+  --line-height-10: 10px;
+  --line-height-14: 14px;
+  --line-height-16: 16px;
+  --line-height-18: 18px;
+  --line-height-20: 20px;
+  --line-height-22: 22px;
+  --line-height-24: 24px;
+  --line-height-26: 26px;
+  --line-height-28: 28px;
+  --line-height-30: 30px;
+  --line-height-32: 32px;
+  --line-height-34: 34px;
+  --line-height-36: 36px;
+  --line-height-40: 40px;
+  --line-height-44: 44px;
+  --line-height-46: 46px;
+  --line-height-48: 48px;
+  --line-height-52: 52px;
+  --line-height-56: 56px;
+  --line-height-62: 62px;
+  --line-height-70: 70px;
+  --line-height-72: 72px;
+  --line-height-80: 80px;
+
+  /* ── Spacing ── */
+  --spacing-00: 0px; /* 0rem / 0x multiplier */
+  --spacing-2: 2px; /* 0.125rem / 0.5x multiplier */
+  --spacing-4: 4px; /* 0.25rem / 1x multiplier */
+  --spacing-8: 8px; /* 0.5rem / 2x multiplier */
+  --spacing-12: 12px; /* 0.75rem / 3x multiplier */
+  --spacing-16: 16px; /* 1rem / 4x multiplier */
+  --spacing-24: 24px; /* 1.5rem / 6x multiplier */
+  --spacing-32: 32px; /* 2rem / 8x multiplier */
+  --spacing-40: 40px; /* 2.5rem / 10x multiplier */
+  --spacing-48: 48px; /* 3rem / 12x multiplier */
+  --spacing-64: 64px; /* 4rem / 16x multiplier */
+  --spacing-80: 80px; /* 5rem / 20x multiplier */
+  --spacing-96: 96px; /* 6rem / 24x multiplier */
+  --spacing-112: 112px; /* 7rem / 28x multiplier */
+  --spacing-128: 128px; /* 8rem / 32x multiplier */
+  --spacing-160: 160px; /* 10rem / 40x multiplier */
+
+  /* ── Border Radius ── */
+  --radius-00: 0px; /* No rounding (sharp corners) — 0rem / 0x */
+  --radius-2: 2px; /* Tiny elements (checkboxes, badges) — 0.125rem / 0.5x */
+  --radius-4: 4px; /* Small elements (tags, compact buttons) — 0.25rem / 1x */
+  --radius-6: 6px; /* Tiny elements (checkboxes, badges) — 0.375rem / 1.5x */
+  --radius-8: 8px; /* Standard components (buttons, inputs) — 0.5rem / 2x */
+  --radius-10: 10px; /* Focus ring for 8px elements — 0.625rem / 2.5x */
+  --radius-12: 12px; /* Medium containers (cards, dropdowns) — 0.75rem / 3x */
+  --radius-14: 14px; /* Focus ring for 12px elements — 0.875rem / 3.5x */
+  --radius-16: 16px; /* Large containers (modals, panels) — 1rem / 4x */
+  --radius-18: 18px; /* Focus ring for 16px elements — 1.125rem / 4.5x */
+  --radius-24: 24px; /* Extra large (video players, special containers) — 1.5rem / 6x */
+  --radius-full: 9999px; /* Pills, avatars, circular elements */
+
+}
+
+/* ── Typography Utility Classes ── */
+
+/* Display */
+/* Display XL — 64px / 84px / Bold */
+.typography-display-xl {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.64};
+  font-weight: {font.weight.bold};
+  line-height: {line-height.84};
+}
+/* Display L — 56px / 72px / Bold */
+.typography-display-lg {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.56};
+  font-weight: {font.weight.bold};
+  line-height: {line-height.72};
+}
+/* Display M — 48px / 62px / Bold */
+.typography-display-md {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.48};
+  font-weight: {font.weight.bold};
+  line-height: {line-height.62};
+}
+/* Display S — 36px / 46px / SemiBold */
+.typography-display-sm {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.36};
+  font-weight: {font.weight.semi-bold};
+  line-height: {line-height.46};
+}
+
+/* Heading */
+/* Heading 01 — 24px / 30px / Bold */
+.typography-heading-01 {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.24};
+  font-weight: {font.weight.bold};
+  line-height: {line-height.30};
+}
+/* Heading 02 — 20px / 26px / Bold */
+.typography-heading-02 {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.20};
+  font-weight: {font.weight.bold};
+  line-height: {line-height.26};
+}
+/* Heading 03 — 16px / 22px / Bold */
+.typography-heading-03 {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.16};
+  font-weight: {font.weight.bold};
+  line-height: {line-height.22};
+}
+/* Heading 04 — 14px / 20px / Bold */
+.typography-heading-04 {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.14};
+  font-weight: {font.weight.bold};
+  line-height: {line-height.20};
+}
+/* Heading 05 — 12px / 16px / Bold */
+.typography-heading-05 {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.12};
+  font-weight: {font.weight.bold};
+  line-height: {line-height.16};
+}
+
+/* Body */
+/* Body Large — 16px / 24px / Regular */
+.typography-body-lg {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.16};
+  font-weight: {font.weight.regular};
+  line-height: {line-height.24};
+}
+/* Body Medium — 14px / 20px / Regular */
+.typography-body-md {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.14};
+  font-weight: {font.weight.regular};
+  line-height: {line-height.20};
+}
+/* Body Small — 12px / 18px / Regular */
+.typography-body-sm {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.12};
+  font-weight: {font.weight.regular};
+  line-height: {line-height.18};
+}
+
+/* Labels */
+/* Label Large — 16px / 20px / Medium */
+.typography-labels-lg {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.16};
+  font-weight: {font.weight.medium};
+  line-height: {line-height.20};
+}
+/* Label Medium — 14px / 18px / Medium */
+.typography-labels-md {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.14};
+  font-weight: {font.weight.medium};
+  line-height: {line-height.18};
+}
+/* Label Small — 12px / 16px / Medium */
+.typography-labels-sm {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.12};
+  font-weight: {font.weight.medium};
+  line-height: {line-height.16};
+}
+
+/* Captions */
+/* Caption Large — 14px / 18px / Regular */
+.typography-captions-lg {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.14};
+  font-weight: {font.weight.regular};
+  line-height: {line-height.18};
+}
+/* Caption Medium — 12px / 16px / Regular */
+.typography-captions-md {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.12};
+  font-weight: {font.weight.regular};
+  line-height: {line-height.16};
+}
+/* Caption Small — 10px / 14px / Regular */
+.typography-captions-sm {
+  font-family: "{font.family}", sans-serif;
+  font-size: {font.size.10};
+  font-weight: {font.weight.regular};
+  line-height: {line-height.14};
+}
+
+/* ── Grid Layout ── */
+:root {
+  /* Mobile grid — 363px, 12px margin, 16px gutter */
+  --grid-sm-width: 363px;
+  --grid-sm-margin: 12px;
+  --grid-sm-gutter: 16px;
+  /* Tablet grid — 1194px, 16px margin, 16px gutter */
+  --grid-md-width: 1194px;
+  --grid-md-margin: 16px;
+  --grid-md-gutter: 16px;
+  /* Desktop grid — 1440px, 32px margin, 16px gutter */
+  --grid-lg-width: 1440px;
+  --grid-lg-margin: 32px;
+  --grid-lg-gutter: 16px;
+  /* Wide grid — 1600px, 32px margin, 16px gutter */
+  --grid-xl-width: 1600px;
+  --grid-xl-margin: 32px;
+  --grid-xl-gutter: 16px;
+}
+
+/* ── Shadows ── */
+:root {
+  --shadow-dark-bright-01: 3px 2px 6px 0px rgba(243,143,0,0.08); /* Dark mode glow elevation 1 */
+  --shadow-dark-bright-02: 3px 4px 8px 0px rgba(243,143,0,0.08); /* Dark mode glow elevation 2 */
+  --shadow-dark-bright-03: 3px 2px 16px 0px rgba(243,143,0,0.10); /* Dark mode glow elevation 3 */
+  --shadow-dark-bright-04: 3px 2px 17px 0px rgba(243,143,0,0.14); /* Dark mode glow elevation 4 */
+  --shadow-dark-bright-05: 3px 2px 50px 0px rgba(243,143,0,0.16); /* Dark mode glow elevation 5 */
+  --shadow-dark-dim-01: 2px 2px 6px 0px rgba(0,0,0,0.18); /* Dark mode depth elevation 1 */
+  --shadow-dark-dim-02: 2px 4px 8px 0px rgba(0,0,0,0.30); /* Dark mode depth elevation 2 */
+  --shadow-dark-dim-03: 2px 2px 16px 0px rgba(0,0,0,0.37); /* Dark mode depth elevation 3 */
+  --shadow-dark-dim-04: 2px 2px 14px 0px rgba(0,0,0,0.78); /* Dark mode depth elevation 4 */
+  --shadow-dark-dim-05: 2px 2px 10px 0px rgba(0,0,0,0.54); /* Dark mode depth elevation 5 */
+  --shadow-light-01: 2px 2px 6px 0px rgba(0,0,0,0.06); /* Light mode elevation 1 */
+  --shadow-light-02: 2px 4px 6px 0px rgba(0,0,0,0.06); /* Light mode elevation 2 */
+  --shadow-light-03: 2px 2px 10px 0px rgba(0,0,0,0.05); /* Light mode elevation 3 */
+  --shadow-light-04: 2px 2px 14px 0px rgba(0,0,0,0.03); /* Light mode elevation 4 */
+  --shadow-light-05: 2px 2px 16px 0px rgba(0,0,0,0.16); /* Light mode elevation 5 */
+}

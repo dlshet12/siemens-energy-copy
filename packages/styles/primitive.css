@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Primitive Design Tokens
+   Auto-generated from final_primitives_1.json
+   ========================================================================== */
+
+:root {
+
+  /* ── Colors ── */
+
+  /* purple */
+  --primitive-color-purple-50: #F1E9FF; /* Purple palette - lightest shade */
+  --primitive-color-purple-100: #DED1FC;
+  --primitive-color-purple-200: #CAAEFF;
+  --primitive-color-purple-300: #BE91FA;
+  --primitive-color-purple-400: #A571F2;
+  --primitive-color-purple-500: #824ACE;
+  --primitive-color-purple-600: #7C38BC;
+  --primitive-color-purple-700: #7522A7;
+  --primitive-color-purple-800: #641E8C;
+  --primitive-color-purple-900: #4D217A;
+  --primitive-color-purple-1000: #1B1534; /* Purple palette - darkest shade */
+
+  /* red */
+  --primitive-color-red-50: #FFECE1; /* Critical/Error palette - lightest shade */
+  --primitive-color-red-100: #FFE3D3;
+  --primitive-color-red-200: #FFC1A8;
+  --primitive-color-red-300: #FF947B;
+  --primitive-color-red-400: #F36757;
+  --primitive-color-red-500: #E01F22;
+  --primitive-color-red-600: #C1001D;
+  --primitive-color-red-700: #A20020;
+  --primitive-color-red-800: #820021;
+  --primitive-color-red-900: #56001A;
+  --primitive-color-red-1000: #56001A; /* Critical/Error palette - darkest shade */
+
+  /* green */
+  --primitive-color-green-50: #E2F7E4; /* Success palette - lightest shade */
+  --primitive-color-green-100: #A5E8A7;
+  --primitive-color-green-200: #78E08A;
+  --primitive-color-green-300: #48D266;
+  --primitive-color-green-400: #3EBE64;
+  --primitive-color-green-500: #0C9A46;
+  --primitive-color-green-600: #058A40;
+  --primitive-color-green-700: #006E33;
+  --primitive-color-green-800: #005228;
+  --primitive-color-green-900: #00391A;
+  --primitive-color-green-1000: #002610; /* Success palette - darkest shade */
+
+  /* yellow */
+  --primitive-color-yellow-50: #FFF8DD; /* Warning palette - lightest shade */
+  --primitive-color-yellow-100: #FFF3C7;
+  --primitive-color-yellow-200: #FFE58D;
+  --primitive-color-yellow-300: #FFD24C;
+  --primitive-color-yellow-400: #FFBF00;
+  --primitive-color-yellow-500: #FFA000;
+  --primitive-color-yellow-600: #C36400;
+  --primitive-color-yellow-700: #AD5700;
+  --primitive-color-yellow-800: #9E4A00;
+  --primitive-color-yellow-900: #833900;
+  --primitive-color-yellow-1000: #692E00; /* Warning palette - darkest shade */
+
+  /* blue */
+  --primitive-color-blue-50: #E5F1FF; /* Info palette - lightest shade */
+  --primitive-color-blue-100: #CBE4FF;
+  --primitive-color-blue-200: #99CAFF;
+  --primitive-color-blue-300: #5AAAFA;
+  --primitive-color-blue-400: #4C99F5;
+  --primitive-color-blue-500: #3388F0;
+  --primitive-color-blue-600: #1A74D4;
+  --primitive-color-blue-700: #0061B0;
+  --primitive-color-blue-800: #004D8A;
+  --primitive-color-blue-900: #003A66;
+  --primitive-color-blue-1000: #00284C; /* Info palette - darkest shade */
+
+  /* neutrals */
+  --primitive-color-neutrals-50: #F5F5F5; /* Neutral gray palette - lightest shade */
+  --primitive-color-neutrals-100: #E6E6E6;
+  --primitive-color-neutrals-200: #CACACA;
+  --primitive-color-neutrals-300: #ADADAD;
+  --primitive-color-neutrals-400: #707070;
+  --primitive-color-neutrals-500: #525252;
+  --primitive-color-neutrals-600: #3D3D3D;
+  --primitive-color-neutrals-700: #2D2D2D;
+  --primitive-color-neutrals-800: #1A1A1A;
+  --primitive-color-neutrals-900: #0D0D0D;
+  --primitive-color-neutrals-1000: #050505; /* Neutral gray palette - darkest shade */
+
+  /* black */
+  --primitive-color-black-100: #000000; /* Solid black - 100% opacity */
+  --primitive-color-black-a100: rgba(0,0,0,0.8); /* Black 80% opacity */
+  --primitive-color-black-a200: rgba(0,0,0,0.6); /* Black 60% opacity */
+  --primitive-color-black-a300: rgba(0,0,0,0.5); /* Black 50% opacity */
+  --primitive-color-black-a400: rgba(0,0,0,0.3); /* Black 30% opacity */
+  --primitive-color-black-a500: rgba(0,0,0,0.15); /* Black 15% opacity */
+  --primitive-color-black-a600: rgba(0,0,0,0.1); /* Black 10% opacity */
+  --primitive-color-black-a700: rgba(0,0,0,0.05); /* Black 5% opacity */
+
+  /* white */
+  --primitive-color-white-100: #FFFFFF; /* Solid white - 100% opacity */
+  --primitive-color-white-a100: rgba(255,255,255,0.6); /* White 60% opacity */
+  --primitive-color-white-a200: rgba(255,255,255,0.5); /* White 50% opacity */
+  --primitive-color-white-a300: rgba(255,255,255,0.3); /* White 30% opacity */
+  --primitive-color-white-a400: rgba(255,255,255,0.2); /* White 20% opacity */
+  --primitive-color-white-a500: rgba(255,255,255,0.12); /* White 12% opacity */
+  --primitive-color-white-a600: rgba(255,255,255,0.06); /* White 6% opacity */
+  --primitive-color-white-a700: rgba(255,255,255,0.04); /* White 4% opacity */
+
+  /* ── Gradients ── */
+  --primitive-gradient-surface-elevated-light: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.3) 100%); /* Light mode elevated surface — white 50% opacity to white 30% opacity */
+  --primitive-gradient-surface-elevated-dark: linear-gradient(180deg, #0D0D0D 0%, #0D0D0D 100%); /* Dark mode elevated surface — solid dark fill */
+  --primitive-gradient-surface-subtle: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 100%); /* Subtle surface — white at 4% opacity (near-transparent) */
+  --primitive-gradient-border: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 100%); /* Gradient border stroke — white 12% to white 4% */
+  --primitive-gradient-action-primary: linear-gradient(180deg, #824ACE 0%, #A571F2 100%); /* Primary action gradient — purple.500 to purple.400. ⚠️ Source showed both stops at 100% — assumed 0% and 100%. Please verify. */
+  --primitive-gradient-divider-default: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.2) 100%); /* Default divider — white 20% */
+  --primitive-gradient-divider-subtle: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.12) 100%); /* Subtle divider — white 12% */
+
+}
