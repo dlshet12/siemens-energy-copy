@@ -16,6 +16,12 @@ const meta: Meta<typeof UiButton> = {
       options: ['primary', 'secondary'],
       description: 'Visual style; maps to design tokens.',
     },
+    color: {
+      control: 'select',
+      options: ['primary', 'danger', 'disabled'],
+      description: 'Color scheme of the button',
+      table: { type: { summary: "'primary' | 'danger' | 'disabled'" }, defaultValue: { summary: "'primary'" } },
+    },
     size: {
       control: 'select',
       options: ['sm', 'md', 'lg'],
@@ -33,6 +39,18 @@ const meta: Meta<typeof UiButton> = {
       control: 'select',
       options: ['button', 'submit', 'reset'],
       description: 'Native button type for forms.',
+    },
+    isIcon: {
+      control: 'boolean',
+      description: 'Whether to show an icon on the button',
+      table: { type: { summary: 'boolean' }, defaultValue: { summary: 'false' } },
+    },
+    iconPosition: {
+      control: 'select',
+      options: ['left', 'right', 'icon only'],
+      description: 'Position of the icon relative to the label',
+      if: { arg: 'isIcon', truthy: true },
+      table: { type: { summary: "'left' | 'right' | 'icon only'" }, defaultValue: { summary: "'left'" } },
     },
   },
   parameters: {
@@ -71,6 +89,42 @@ const meta: Meta<typeof UiButton> = {
 export default meta;
 
 type Story = StoryObj<typeof UiButton>;
+
+
+export const Playground: Story = {
+  args: {
+    label: 'Button',
+    variant: 'primary',
+    color: 'primary',
+    size: 'md',
+    disabled: false,
+    fullWidth: false,
+    type: 'button',
+    isIcon: false,
+    iconPosition: 'left',
+  },
+  render: (args) => {
+    const icon = args.isIcon
+      ? html`<span style="display:inline-flex;align-items:center;margin-${args.iconPosition === 'right' ? 'left' : 'right'}:0.5em;">★</span>`
+      : null;
+    return html`
+      <ui-button
+        variant=${args.variant}
+        size=${args.size}
+        color=${args.color}
+        ?disabled=${args.disabled}
+        ?full-width=${args.fullWidth}
+        type=${args.type}
+        isIcon=${args.isIcon}
+      >
+        ${args.isIcon && args.iconPosition === 'left' ? icon : null}
+        ${args.iconPosition !== 'icon only' ? args.label : ''}
+        ${args.isIcon && args.iconPosition === 'right' ? icon : null}
+        ${args.isIcon && args.iconPosition === 'icon only' ? icon : null}
+      </ui-button>
+    `;
+  },
+};
 
 export const Primary: Story = {
   args: {
@@ -131,9 +185,22 @@ export const FullWidth: Story = {
 };
 
 export const WithSlotContent: Story = {
-  render: () => html`
-    <ui-button variant="primary" size="md">
-      <span style="margin-right: 0.5rem;">✓</span> Save changes
-    </ui-button>
-  `,
+  args: {
+    label: 'Save changes',
+    variant: 'primary',
+    size: 'md',
+    isIcon: true,
+    iconPosition: 'left',
+  },
+  render: (args) => {
+    const icon = html`<span style="margin-right: 0.5rem;">✓</span>`;
+    return html`
+      <ui-button variant=${args.variant} size=${args.size} isIcon=${args.isIcon}>
+        ${args.isIcon && args.iconPosition === 'left' ? icon : null}
+        ${args.label}
+        ${args.isIcon && args.iconPosition === 'right' ? icon : null}
+        ${args.isIcon && args.iconPosition === 'icon only' ? icon : null}
+      </ui-button>
+    `;
+  },
 };

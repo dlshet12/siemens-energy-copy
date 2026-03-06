@@ -103,6 +103,11 @@ export class UiButton extends LitElement {
   /** type attribute for form submit (button | submit | reset) */
   @property({ type: String }) type: 'button' | 'submit' | 'reset' = 'button';
 
+  @property({ type: String }) label = '';
+@property({ type: String }) color = 'primary';
+@property({ type: Boolean }) isIcon = false;
+
+
   private _handleClick(e: MouseEvent) {
     if (this.disabled) {
       e.preventDefault();

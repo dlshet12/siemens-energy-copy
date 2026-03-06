@@ -1,3 +1,5 @@
+// Import the button component to ensure <ui-button> is registered
+import '../components/button/button';
 import type { Preview } from '@storybook/web-components';
 // Relative path so Vite can inline tokens (run npm run build:tokens first)
 import tokensCss from '../../tokens/build/tokens.css?raw';
