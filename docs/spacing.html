@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spacing — Noedra Design System</title>
+  <style>
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: #0d0d0d;
+      background: #fff;
+      margin: 0;
+      padding: 2rem 2rem 3rem;
+      box-sizing: border-box;
+    }
+    .system-label {
+      font-size: 14px;
+      color: #525252;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 1rem;
+    }
+    .intro {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #2d2d2d;
+      margin: 0 0 2rem;
+      max-width: 640px;
+    }
+    table {
+      width: 100%;
+      max-width: 800px;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #cacaca;
+      text-align: left;
+    }
+    th:nth-child(2), th:nth-child(3), th:nth-child(4),
+    td:nth-child(2), td:nth-child(3), td:nth-child(4) {
+      text-align: right;
+    }
+    th { font-weight: 600; }
+    code { font-size: 13px; }
+    .bar {
+      height: 24px;
+      background: #a571f2;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="system-label">Noedra Design System</div>
+  <h1>Spacing</h1>
+  <p class="intro">
+    Spacing tokens in the Noedra Design System define a consistent scale for layout, padding, margin, and gap. Use these tokens to keep alignment and rhythm consistent across all components and pages.
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>rem</th>
+        <th>Base unit multiplier</th>
+        <th>px</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>spacing.00</code></td><td>0</td><td>0</td><td>0</td><td><div class="bar" style="width: 0"></div></td></tr>
+      <tr><td><code>spacing.2</code></td><td>0.125</td><td>0.5</td><td>2</td><td><div class="bar" style="width: 2px"></div></td></tr>
+      <tr><td><code>spacing.4</code></td><td>0.25</td><td>1</td><td>4</td><td><div class="bar" style="width: 4px"></div></td></tr>
+      <tr><td><code>spacing.8</code></td><td>0.5</td><td>2</td><td>8</td><td><div class="bar" style="width: 8px"></div></td></tr>
+      <tr><td><code>spacing.12</code></td><td>0.75</td><td>3</td><td>12</td><td><div class="bar" style="width: 12px"></div></td></tr>
+      <tr><td><code>spacing.16</code></td><td>1</td><td>4</td><td>16</td><td><div class="bar" style="width: 16px"></div></td></tr>
+      <tr><td><code>spacing.24</code></td><td>1.5</td><td>6</td><td>24</td><td><div class="bar" style="width: 24px"></div></td></tr>
+      <tr><td><code>spacing.32</code></td><td>2</td><td>8</td><td>32</td><td><div class="bar" style="width: 32px"></div></td></tr>
+      <tr><td><code>spacing.40</code></td><td>2.5</td><td>10</td><td>40</td><td><div class="bar" style="width: 40px"></div></td></tr>
+      <tr><td><code>spacing.48</code></td><td>3</td><td>12</td><td>48</td><td><div class="bar" style="width: 48px"></div></td></tr>
+      <tr><td><code>spacing.64</code></td><td>4</td><td>16</td><td>64</td><td><div class="bar" style="width: 64px"></div></td></tr>
+      <tr><td><code>spacing.80</code></td><td>5</td><td>20</td><td>80</td><td><div class="bar" style="width: 80px"></div></td></tr>
+      <tr><td><code>spacing.96</code></td><td>6</td><td>24</td><td>96</td><td><div class="bar" style="width: 96px"></div></td></tr>
+      <tr><td><code>spacing.112</code></td><td>7</td><td>28</td><td>112</td><td><div class="bar" style="width: 112px"></div></td></tr>
+      <tr><td><code>spacing.128</code></td><td>8</td><td>32</td><td>128</td><td><div class="bar" style="width: 128px"></div></td></tr>
+      <tr><td><code>spacing.160</code></td><td>10</td><td>40</td><td>160</td><td><div class="bar" style="width: 160px"></div></td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

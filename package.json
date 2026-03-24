@@ -1,0 +1,23 @@
+{
+  "name": "@nds/design-system-root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "tokens:build": "npm run build --workspace @nds/tokens",
+    "tokens:copy": "cp packages/tokens/dist/css/tokens.css docs/tokens.css",
+    "build": "npm run tokens:build && npm run tokens:copy && npm run build --workspace @nds/components",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
+  },
+  "devDependencies": {
+    "@storybook/web-components-vite": "8.6.18",
+    "@storybook/addon-essentials": "8.6.18",
+    "storybook": "8.6.18",
+    "lit": "^3.2.0",
+    "typescript": "latest",
+    "vite": "latest",
+    "style-dictionary": "latest"
+  }
+}

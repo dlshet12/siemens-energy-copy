@@ -1,0 +1,31 @@
+import { Canvas, Controls, Meta, Source } from '@storybook/blocks';
+import * as IconStories from './nds-icon.stories';
+
+<Meta
+  of={IconStories}
+  title="Components/Icon"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<div style={{ fontFamily: 'var(--font-family-base, \'DM Sans\'), system-ui, sans-serif' }}>
+  # Icon
+  <p style={{ color: 'var(--color-neutrals-600, #3d3d3d)', marginTop: 8, lineHeight: 1.5, maxWidth: 900 }}>
+    Reusable icon primitive based on Google Material icon fonts. Use this component across the project for consistent icon rendering.
+  </p>
+</div>
+
+## Playground
+
+<Canvas of={IconStories.Playground} />
+<Controls of={IconStories.Playground} />
+
+## Usage
+
+<Source
+  language="html"
+  code={`<nds-icon variant="filled" size="lg">home</nds-icon>
+<nds-icon variant="outlined" size="md" color="#7C38BC">settings</nds-icon>`}
+/>
+

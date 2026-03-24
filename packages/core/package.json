@@ -1,0 +1,19 @@
+{
+  "name": "@nds/core",
+  "version": "0.1.0",
+  "private": false,
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "dependencies": {
+    "@nds/components": "0.1.0",
+    "@nds/tokens": "0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "latest"
+  }
+}

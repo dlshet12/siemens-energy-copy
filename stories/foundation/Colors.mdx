@@ -1,0 +1,391 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta
+  title="Foundation/Colors"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<link rel="stylesheet" href="/tokens.css" />
+
+<style>{`
+  .color-doc-root {
+    font-family: var(--font-family-base, 'DM Sans'), system-ui, sans-serif;
+    color: var(--color-neutrals-900, #0d0d0d);
+    padding: 0;
+  }
+  .color-doc-root .system-label {
+    font-size: 14px;
+    color: var(--color-neutrals-500, #525252);
+    margin-bottom: 0.5rem;
+  }
+  .color-doc-root h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--color-neutrals-900, #0d0d0d);
+  }
+  .color-doc-root h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+    color: var(--color-neutrals-900, #0d0d0d);
+  }
+  .color-doc-root h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+    color: var(--color-neutrals-800, #1a1a1a);
+  }
+  .color-doc-intro {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-neutrals-700, #2d2d2d);
+    margin: 0 0 2rem;
+    max-width: 640px;
+  }
+  .color-doc-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-neutrals-600, #3d3d3d);
+    margin: 0 0 12px;
+    max-width: 640px;
+  }
+  .color-doc-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .color-doc-table th,
+  .color-doc-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-neutrals-200, #cacaca);
+    text-align: left;
+  }
+  .color-doc-table th { font-weight: 600; }
+  .color-doc-table code { font-size: 13px; }
+  .color-doc-table td:first-child { cursor: pointer; }
+  .color-doc-table td:first-child:hover { opacity: 0.8; }
+  .color-doc-swatch {
+    width: 48px;
+    height: 28px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .color-doc-semantics-mode {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-neutrals-600, #3d3d3d);
+    margin: 16px 0 8px;
+  }
+  .color-doc-semantics-table-wrap {
+    background: #1a1a1a;
+    color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    max-width: 800px;
+  }
+  .color-doc-semantics-table-wrap .color-doc-table {
+    color: #ffffff;
+  }
+  .color-doc-semantics-table-wrap .color-doc-table th,
+  .color-doc-semantics-table-wrap .color-doc-table td {
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+    color: #ffffff;
+  }
+  .color-doc-semantics-table-wrap .color-doc-table code {
+    color: #e6e6e6;
+  }
+  .color-doc-semantics-table-wrap .color-doc-swatch {
+    border-color: rgba(255,255,255,0.2);
+  }
+  @keyframes color-copied-toast {
+    from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+`}</style>
+
+<div className="color-doc-root">
+
+<div className="system-label">Noedra Design System</div>
+
+# Color System
+
+<div className="color-doc-intro">
+  Token based color system. Primitives define the raw palette; use them for backgrounds, borders, text, and semantic roles across light and dark contexts.
+</div>
+
+---
+
+## Primitives
+
+### Purple
+
+<div className="color-doc-desc">
+  A collection of colors from the purple range used in this design system. Use for primary actions, links, and brand emphasis.
+</div>
+
+<table
+  className="color-doc-table"
+  onClick={(e) => {
+    const code = e.target?.closest?.('td')?.querySelector?.('code');
+    if (code?.textContent) {
+      navigator.clipboard.writeText(code.textContent);
+      const toast = document.createElement('div');
+      toast.textContent = 'Copied!';
+      toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1500);
+    }
+  }}
+  title="Click a token to copy"
+>
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>--color-purple-50</code></td><td>#F1E9FF</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-50)'}} /></td></tr>
+    <tr><td><code>--color-purple-100</code></td><td>#DED1FC</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-100)'}} /></td></tr>
+    <tr><td><code>--color-purple-200</code></td><td>#CAAEFF</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-200)'}} /></td></tr>
+    <tr><td><code>--color-purple-300</code></td><td>#BE91FA</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-300)'}} /></td></tr>
+    <tr><td><code>--color-purple-400</code></td><td>#A571F2</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-400)'}} /></td></tr>
+    <tr><td><code>--color-purple-500</code></td><td>#824ACE</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-500)'}} /></td></tr>
+    <tr><td><code>--color-purple-600</code></td><td>#7C38BC</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-600)'}} /></td></tr>
+    <tr><td><code>--color-purple-700</code></td><td>#7522A7</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-700)'}} /></td></tr>
+    <tr><td><code>--color-purple-800</code></td><td>#641E8C</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-800)'}} /></td></tr>
+    <tr><td><code>--color-purple-900</code></td><td>#4D217A</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-900)'}} /></td></tr>
+    <tr><td><code>--color-purple-1000</code></td><td>#1B1534</td><td><span className="color-doc-swatch" style={{background: 'var(--color-purple-1000)'}} /></td></tr>
+  </tbody>
+</table>
+
+### Red
+
+<div className="color-doc-desc">
+  A collection of colors from the red range. Use for errors, destructive actions, and negative feedback.
+</div>
+
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>--color-red-50</code></td><td>#FFECE1</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-50)'}} /></td></tr>
+    <tr><td><code>--color-red-100</code></td><td>#FFE3D3</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-100)'}} /></td></tr>
+    <tr><td><code>--color-red-200</code></td><td>#FFC1A8</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-200)'}} /></td></tr>
+    <tr><td><code>--color-red-300</code></td><td>#FF947B</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-300)'}} /></td></tr>
+    <tr><td><code>--color-red-400</code></td><td>#F36757</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-400)'}} /></td></tr>
+    <tr><td><code>--color-red-500</code></td><td>#E01F22</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-500)'}} /></td></tr>
+    <tr><td><code>--color-red-600</code></td><td>#C1001D</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-600)'}} /></td></tr>
+    <tr><td><code>--color-red-700</code></td><td>#A20020</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-700)'}} /></td></tr>
+    <tr><td><code>--color-red-800</code></td><td>#820021</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-800)'}} /></td></tr>
+    <tr><td><code>--color-red-900</code></td><td>#6C0021</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-900)'}} /></td></tr>
+    <tr><td><code>--color-red-1000</code></td><td>#56001A</td><td><span className="color-doc-swatch" style={{background: 'var(--color-red-1000)'}} /></td></tr>
+  </tbody>
+</table>
+
+### Green
+
+<div className="color-doc-desc">
+  A collection of colors from the green range. Use for success states, positive feedback, and confirmation.
+</div>
+
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>--color-green-50</code></td><td>#E2F7E4</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-50)'}} /></td></tr>
+    <tr><td><code>--color-green-100</code></td><td>#A5E8A7</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-100)'}} /></td></tr>
+    <tr><td><code>--color-green-200</code></td><td>#78E08A</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-200)'}} /></td></tr>
+    <tr><td><code>--color-green-300</code></td><td>#48D266</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-300)'}} /></td></tr>
+    <tr><td><code>--color-green-400</code></td><td>#3EBE64</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-400)'}} /></td></tr>
+    <tr><td><code>--color-green-500</code></td><td>#0C9A46</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-500)'}} /></td></tr>
+    <tr><td><code>--color-green-600</code></td><td>#058A40</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-600)'}} /></td></tr>
+    <tr><td><code>--color-green-700</code></td><td>#006E33</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-700)'}} /></td></tr>
+    <tr><td><code>--color-green-800</code></td><td>#005228</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-800)'}} /></td></tr>
+    <tr><td><code>--color-green-900</code></td><td>#00391A</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-900)'}} /></td></tr>
+    <tr><td><code>--color-green-1000</code></td><td>#002610</td><td><span className="color-doc-swatch" style={{background: 'var(--color-green-1000)'}} /></td></tr>
+  </tbody>
+</table>
+
+### Yellow
+
+<div className="color-doc-desc">
+  A collection of colors from the yellow range. Use for warnings, caution, and neutral status.
+</div>
+
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>--color-yellow-50</code></td><td>#FFF8DD</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-50)'}} /></td></tr>
+    <tr><td><code>--color-yellow-100</code></td><td>#FFF3C7</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-100)'}} /></td></tr>
+    <tr><td><code>--color-yellow-200</code></td><td>#FFE58D</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-200)'}} /></td></tr>
+    <tr><td><code>--color-yellow-300</code></td><td>#FFD24C</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-300)'}} /></td></tr>
+    <tr><td><code>--color-yellow-400</code></td><td>#FFBF00</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-400)'}} /></td></tr>
+    <tr><td><code>--color-yellow-500</code></td><td>#FFA000</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-500)'}} /></td></tr>
+    <tr><td><code>--color-yellow-600</code></td><td>#C36400</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-600)'}} /></td></tr>
+    <tr><td><code>--color-yellow-700</code></td><td>#AD5700</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-700)'}} /></td></tr>
+    <tr><td><code>--color-yellow-800</code></td><td>#9E4A00</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-800)'}} /></td></tr>
+    <tr><td><code>--color-yellow-900</code></td><td>#833900</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-900)'}} /></td></tr>
+    <tr><td><code>--color-yellow-1000</code></td><td>#692E00</td><td><span className="color-doc-swatch" style={{background: 'var(--color-yellow-1000)'}} /></td></tr>
+  </tbody>
+</table>
+
+### Blue
+
+<div className="color-doc-desc">
+  A collection of colors from the blue range. Use for informational messages, links, and secondary emphasis.
+</div>
+
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>--color-blue-50</code></td><td>#E5F1FF</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-50)'}} /></td></tr>
+    <tr><td><code>--color-blue-100</code></td><td>#CBE4FF</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-100)'}} /></td></tr>
+    <tr><td><code>--color-blue-200</code></td><td>#99CAFF</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-200)'}} /></td></tr>
+    <tr><td><code>--color-blue-300</code></td><td>#5AAAFA</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-300)'}} /></td></tr>
+    <tr><td><code>--color-blue-400</code></td><td>#4C99F5</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-400)'}} /></td></tr>
+    <tr><td><code>--color-blue-500</code></td><td>#3388F0</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-500)'}} /></td></tr>
+    <tr><td><code>--color-blue-600</code></td><td>#1A74D4</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-600)'}} /></td></tr>
+    <tr><td><code>--color-blue-700</code></td><td>#0061B0</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-700)'}} /></td></tr>
+    <tr><td><code>--color-blue-800</code></td><td>#004D8A</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-800)'}} /></td></tr>
+    <tr><td><code>--color-blue-900</code></td><td>#003A66</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-900)'}} /></td></tr>
+    <tr><td><code>--color-blue-1000</code></td><td>#00284C</td><td><span className="color-doc-swatch" style={{background: 'var(--color-blue-1000)'}} /></td></tr>
+  </tbody>
+</table>
+
+### Neutrals
+
+<div className="color-doc-desc">
+  Grayscale palette for text, borders, backgrounds, and UI chrome. Use across light and dark contexts.
+</div>
+
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>--color-neutrals-50</code></td><td>#F5F5F5</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-50)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-100</code></td><td>#E6E6E6</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-100)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-200</code></td><td>#CACACA</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-200)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-300</code></td><td>#ADADAD</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-300)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-400</code></td><td>#707070</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-400)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-500</code></td><td>#525252</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-500)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-600</code></td><td>#3D3D3D</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-600)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-700</code></td><td>#2D2D2D</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-700)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-800</code></td><td>#1A1A1A</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-800)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-900</code></td><td>#0D0D0D</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-900)'}} /></td></tr>
+    <tr><td><code>--color-neutrals-950</code></td><td>#050505</td><td><span className="color-doc-swatch" style={{background: 'var(--color-neutrals-950)'}} /></td></tr>
+  </tbody>
+</table>
+
+---
+
+## Semantics
+
+Semantic tokens map to roles (text, background, border, interactive, status) and resolve to different values in light and dark themes.
+
+### Text colors
+
+<div className="color-doc-semantics-mode">Light mode</div>
+<div className="color-doc-semantics-table-wrap">
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>text-primary</code></td><td>#050505</td><td><span className="color-doc-swatch" style={{background: '#050505'}} /></td></tr>
+    <tr><td><code>text-secondary</code></td><td>#525252</td><td><span className="color-doc-swatch" style={{background: '#525252'}} /></td></tr>
+    <tr><td><code>text-tertiary</code></td><td>#707070</td><td><span className="color-doc-swatch" style={{background: '#707070'}} /></td></tr>
+    <tr><td><code>text-inverse</code></td><td>#F5F5F5</td><td><span className="color-doc-swatch" style={{background: '#F5F5F5', borderColor: 'rgba(0,0,0,0.15)'}} /></td></tr>
+    <tr><td><code>text-link</code></td><td>#7C38BC</td><td><span className="color-doc-swatch" style={{background: '#7C38BC'}} /></td></tr>
+    <tr><td><code>text-disabled</code></td><td>#707070</td><td><span className="color-doc-swatch" style={{background: '#707070'}} /></td></tr>
+    <tr><td><code>text-success</code></td><td>#006E33</td><td><span className="color-doc-swatch" style={{background: '#006E33'}} /></td></tr>
+    <tr><td><code>text-danger</code></td><td>#E01F22</td><td><span className="color-doc-swatch" style={{background: '#E01F22'}} /></td></tr>
+    <tr><td><code>text-on-accent</code></td><td>#FFFFFF</td><td><span className="color-doc-swatch" style={{background: '#FFFFFF', borderColor: 'rgba(0,0,0,0.15)'}} /></td></tr>
+  </tbody>
+</table>
+</div>
+<div className="color-doc-semantics-mode">Dark mode</div>
+<div className="color-doc-semantics-table-wrap">
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>text-primary</code></td><td>#FFFFFF</td><td><span className="color-doc-swatch" style={{background: '#FFFFFF'}} /></td></tr>
+    <tr><td><code>text-secondary</code></td><td>#ADADAD</td><td><span className="color-doc-swatch" style={{background: '#ADADAD'}} /></td></tr>
+    <tr><td><code>text-tertiary</code></td><td>#707070</td><td><span className="color-doc-swatch" style={{background: '#707070'}} /></td></tr>
+    <tr><td><code>text-inverse</code></td><td>#0D0D0D</td><td><span className="color-doc-swatch" style={{background: '#0D0D0D'}} /></td></tr>
+    <tr><td><code>text-link</code></td><td>#A571F2</td><td><span className="color-doc-swatch" style={{background: '#A571F2'}} /></td></tr>
+    <tr><td><code>text-disabled</code></td><td>#707070</td><td><span className="color-doc-swatch" style={{background: '#707070'}} /></td></tr>
+    <tr><td><code>text-success</code></td><td>#0C9A46</td><td><span className="color-doc-swatch" style={{background: '#0C9A46'}} /></td></tr>
+    <tr><td><code>text-danger</code></td><td>#F36757</td><td><span className="color-doc-swatch" style={{background: '#F36757'}} /></td></tr>
+    <tr><td><code>text-on-accent</code></td><td>#FFFFFF</td><td><span className="color-doc-swatch" style={{background: '#FFFFFF'}} /></td></tr>
+  </tbody>
+</table>
+</div>
+
+### Background colors
+
+<div className="color-doc-semantics-mode">Light mode</div>
+<div className="color-doc-semantics-table-wrap">
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>surface-canvas</code></td><td>#F5F5F5</td><td><span className="color-doc-swatch" style={{background: '#F5F5F5', borderColor: 'rgba(0,0,0,0.15)'}} /></td></tr>
+    <tr><td><code>background-layer-02</code></td><td>#E6E6E6</td><td><span className="color-doc-swatch" style={{background: '#E6E6E6'}} /></td></tr>
+  </tbody>
+</table>
+</div>
+<div className="color-doc-semantics-mode">Dark mode</div>
+<div className="color-doc-semantics-table-wrap">
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #fff; color: #1a1a1a; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>surface-canvas</code></td><td>#0D0D0D</td><td><span className="color-doc-swatch" style={{background: '#0D0D0D'}} /></td></tr>
+    <tr><td><code>background-layer-02</code></td><td>#2D2D2D</td><td><span className="color-doc-swatch" style={{background: '#2D2D2D'}} /></td></tr>
+  </tbody>
+</table>
+</div>
+
+### Interactive colors
+
+<div className="color-doc-semantics-mode">Light mode</div>
+<div className="color-doc-semantics-table-wrap">
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>interactive-primary</code></td><td>#824ACE</td><td><span className="color-doc-swatch" style={{background: '#824ACE'}} /></td></tr>
+    <tr><td><code>interactive-primary-hover</code></td><td>#7C38BC</td><td><span className="color-doc-swatch" style={{background: '#7C38BC'}} /></td></tr>
+    <tr><td><code>interactive-destructive</code></td><td>#E01F22</td><td><span className="color-doc-swatch" style={{background: '#E01F22'}} /></td></tr>
+    <tr><td><code>interactive-destructive-hover</code></td><td>#A20020</td><td><span className="color-doc-swatch" style={{background: '#A20020'}} /></td></tr>
+    <tr><td><code>interactive-disabled</code></td><td>#CACACA</td><td><span className="color-doc-swatch" style={{background: '#CACACA'}} /></td></tr>
+  </tbody>
+</table>
+</div>
+<div className="color-doc-semantics-mode">Dark mode</div>
+<div className="color-doc-semantics-table-wrap">
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #fff; color: #1a1a1a; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>interactive-primary</code></td><td>#824ACE</td><td><span className="color-doc-swatch" style={{background: '#824ACE'}} /></td></tr>
+    <tr><td><code>interactive-primary-hover</code></td><td>#7C38BC</td><td><span className="color-doc-swatch" style={{background: '#7C38BC'}} /></td></tr>
+    <tr><td><code>interactive-destructive</code></td><td>#E01F22</td><td><span className="color-doc-swatch" style={{background: '#E01F22'}} /></td></tr>
+    <tr><td><code>interactive-destructive-hover</code></td><td>#C1001D</td><td><span className="color-doc-swatch" style={{background: '#C1001D'}} /></td></tr>
+    <tr><td><code>interactive-disabled</code></td><td>#2D2D2D</td><td><span className="color-doc-swatch" style={{background: '#2D2D2D'}} /></td></tr>
+  </tbody>
+</table>
+</div>
+
+### Status colors
+
+<div className="color-doc-desc">
+  Status colors are shared across light and dark; use for success, info, critical, and warning states.
+</div>
+<table className="color-doc-table" onClick={(e) => { const code = e.target?.closest?.('td')?.querySelector?.('code'); if (code?.textContent) { navigator.clipboard.writeText(code.textContent); const toast = document.createElement('div'); toast.textContent = 'Copied!'; toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: color-copied-toast 0.2s ease;'; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500); } }} title="Click a token to copy">
+  <thead><tr><th>Token</th><th>Value</th><th>Swatch</th></tr></thead>
+  <tbody>
+    <tr><td><code>status-success</code></td><td>#0C9A46</td><td><span className="color-doc-swatch" style={{background: '#0C9A46'}} /></td></tr>
+    <tr><td><code>status-success-on-accent</code></td><td>#48D266</td><td><span className="color-doc-swatch" style={{background: '#48D266'}} /></td></tr>
+    <tr><td><code>status-info</code></td><td>#1A74D4</td><td><span className="color-doc-swatch" style={{background: '#1A74D4'}} /></td></tr>
+    <tr><td><code>status-critical</code></td><td>#E01F22</td><td><span className="color-doc-swatch" style={{background: '#E01F22'}} /></td></tr>
+    <tr><td><code>status-warning</code></td><td>#AD5700</td><td><span className="color-doc-swatch" style={{background: '#AD5700'}} /></td></tr>
+  </tbody>
+</table>
+
+</div>

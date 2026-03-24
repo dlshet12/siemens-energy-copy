@@ -1,0 +1,80 @@
+import { Meta, Story } from '@storybook/blocks';
+import * as FontWeightStories from './font-weight.stories';
+
+<Meta
+  of={FontWeightStories}
+  title="Foundation/Font Weight"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<link rel="stylesheet" href="/tokens.css" />
+
+<style>{`
+  .font-doc-root {
+    font-family: var(--font-family-base, 'DM Sans'), system-ui, sans-serif;
+    color: var(--color-neutrals-900, #0d0d0d);
+    padding: 0;
+  }
+  .font-doc-root .system-label {
+    font-size: 14px;
+    color: var(--color-neutrals-500, #525252);
+    margin-bottom: 0.5rem;
+  }
+  .font-doc-root h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--color-neutrals-900, #0d0d0d);
+  }
+  .font-doc-intro {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-neutrals-700, #2d2d2d);
+    margin: 0 0 2rem;
+    max-width: 640px;
+  }
+  .font-doc-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .font-doc-table th,
+  .font-doc-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-neutrals-200, #cacaca);
+    text-align: left;
+  }
+  .font-doc-table th:nth-child(2),
+  .font-doc-table th:nth-child(3),
+  .font-doc-table th:nth-child(4),
+  .font-doc-table td:nth-child(2),
+  .font-doc-table td:nth-child(3),
+  .font-doc-table td:nth-child(4) {
+    text-align: right;
+  }
+  .font-doc-table th { font-weight: 600; }
+  .font-doc-table code { font-size: 13px; }
+  .font-doc-table td:first-child { cursor: pointer; }
+  .font-doc-table td:first-child:hover { opacity: 0.8; }
+  @keyframes font-doc-copied-toast {
+    from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+`}</style>
+
+<div className="font-doc-root">
+
+<div className="system-label">Noedra Design System</div>
+
+# Font Weight
+
+<div className="font-doc-intro">
+  Font weight tokens define the typographic weight scale. Use these tokens for consistent text emphasis across the design system.
+</div>
+
+<Story />
+
+</div>

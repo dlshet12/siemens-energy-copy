@@ -1,0 +1,57 @@
+import { Canvas, Controls, Meta, Source, Story } from '@storybook/blocks';
+import * as InputStories from './nds-input.stories';
+
+<Meta
+  of={InputStories}
+  title="Components/TextInput"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<div style={{ fontFamily: 'var(--font-family-base, \'DM Sans\'), system-ui, sans-serif' }}>
+  # Text Input
+  <p style={{ color: 'var(--color-neutrals-600, #3d3d3d)', marginTop: 8, lineHeight: 1.5, maxWidth: 900 }}>
+    Basic text field with label and helper/error messaging. Use controls to test states and content.
+  </p>
+</div>
+
+## Playground
+
+<Canvas of={InputStories.Playground} />
+<Controls of={InputStories.Playground} />
+
+## Usage
+
+<Source
+  language="html"
+  code={`<nds-input placeholder="Enter value">
+  <span slot="label">Label</span>
+  <span slot="helper">Helper text</span>
+</nds-input>
+
+<nds-input state="error" placeholder="Enter value">
+  <span slot="label">Label</span>
+  <span slot="helper">Error message</span>
+</nds-input>`}
+/>
+
+## States
+
+<Story of={InputStories.Default} />
+<Story of={InputStories.Error} />
+
+## Do
+
+- Keep labels short and descriptive.
+- Provide helper text for input format when needed.
+- Use `state="error"` with a clear error message.
+- Keep placeholder as hint text, not as a replacement for label.
+
+## Don't
+
+- Do not rely on placeholder as the only field label.
+- Do not use generic errors like "Invalid input" without guidance.
+- Do not use long helper text that wraps multiple lines unnecessarily.
+- Do not hide required validation feedback.
+

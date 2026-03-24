@@ -1,0 +1,101 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta
+  title="Foundation/Grid Layouts"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<link rel="stylesheet" href="/tokens.css" />
+
+<style>{`
+  .grid-doc-root {
+    font-family: var(--font-family-base, 'DM Sans'), system-ui, sans-serif;
+    color: var(--color-neutrals-900, #0d0d0d);
+    padding: 0;
+  }
+  .grid-doc-root .system-label {
+    font-size: 14px;
+    color: var(--color-neutrals-500, #525252);
+    margin-bottom: 0.5rem;
+  }
+  .grid-doc-root h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+  .grid-doc-intro {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-neutrals-700, #2d2d2d);
+    margin: 0 0 2rem;
+    max-width: 640px;
+  }
+  .grid-doc-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .grid-doc-table th,
+  .grid-doc-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-neutrals-200, #cacaca);
+    text-align: left;
+  }
+  .grid-doc-table th:nth-child(2),
+  .grid-doc-table td:nth-child(2) { text-align: right; }
+  .grid-doc-table th { font-weight: 600; }
+  .grid-doc-table code { font-size: 13px; }
+  .grid-doc-table td:first-child { cursor: pointer; }
+  .grid-doc-table td:first-child:hover { opacity: 0.8; }
+  @keyframes grid-copied-toast {
+    from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+`}</style>
+
+<div className="grid-doc-root">
+
+<div className="system-label">Noedra Design System</div>
+
+# Grid Layouts
+
+<div className="grid-doc-intro">
+  Grid layout tokens create a cohesive and structured visual framework across all applications and screens. When paired with spacing tokens, they effectively define the arrangement of elements, clearly showcasing which items are aligned, interactive, and ready for user interaction.
+</div>
+
+<table
+  className="grid-doc-table"
+  onClick={(e) => {
+    const code = e.target?.closest?.('td')?.querySelector?.('code');
+    if (code?.textContent) {
+      navigator.clipboard.writeText(code.textContent);
+      const toast = document.createElement('div');
+      toast.textContent = 'Copied!';
+      toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: grid-copied-toast 0.2s ease;';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1500);
+    }
+  }}
+  title="Click a token to copy"
+>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>Value (px)</th>
+      <th>Usage</th>
+      <th>Margin</th>
+      <th>Gutter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>grid-layout.sm</code></td><td>363</td><td>Mobile</td><td>12px</td><td>16px</td></tr>
+    <tr><td><code>grid-layout.md</code></td><td>1194</td><td>Tablet</td><td>16px</td><td>16px</td></tr>
+    <tr><td><code>grid-layout.lg</code></td><td>1440</td><td>Desktop</td><td>32px</td><td>16px</td></tr>
+    <tr><td><code>grid-layout.xl</code></td><td>1600</td><td>Wide</td><td>32px</td><td>16px</td></tr>
+  </tbody>
+</table>
+
+</div>

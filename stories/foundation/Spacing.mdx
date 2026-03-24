@@ -1,0 +1,126 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta
+  title="Foundation/Spacing"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<link rel="stylesheet" href="/tokens.css" />
+
+<style>{`
+  .spacing-doc-root {
+    font-family: var(--font-family-base, 'DM Sans'), system-ui, sans-serif;
+    color: var(--color-neutrals-900, #0d0d0d);
+    padding: 0;
+  }
+  .spacing-doc-root .system-label {
+    font-size: 14px;
+    color: var(--color-neutrals-500, #525252);
+    margin-bottom: 0.5rem;
+  }
+  .spacing-doc-root h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--color-neutrals-900, #0d0d0d);
+  }
+  .spacing-doc-intro {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-neutrals-700, #2d2d2d);
+    margin: 0 0 2rem;
+    max-width: 640px;
+  }
+  .spacing-doc-table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .spacing-doc-table th,
+  .spacing-doc-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-neutrals-200, #cacaca);
+    text-align: left;
+  }
+  .spacing-doc-table th:nth-child(2),
+  .spacing-doc-table th:nth-child(3),
+  .spacing-doc-table th:nth-child(4),
+  .spacing-doc-table td:nth-child(2),
+  .spacing-doc-table td:nth-child(3),
+  .spacing-doc-table td:nth-child(4) {
+    text-align: right;
+  }
+  .spacing-doc-table th { font-weight: 600; }
+  .spacing-doc-table code { font-size: 13px; }
+  .spacing-doc-table td:first-child { cursor: pointer; }
+  .spacing-doc-table td:first-child:hover { opacity: 0.8; }
+  .spacing-doc-bar {
+    height: 24px;
+    background: var(--color-purple-400, #a571f2);
+    border-radius: 2px;
+  }
+  @keyframes spacing-copied-toast {
+    from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+`}</style>
+
+<div className="spacing-doc-root">
+
+<div className="system-label">Noedra Design System</div>
+
+# Spacing
+
+<div className="spacing-doc-intro">
+  Spacing tokens in the Noedra Design System define a consistent scale for layout, padding, margin, and gap. Use these tokens to keep alignment and rhythm consistent across all components and pages.
+</div>
+
+<table
+  className="spacing-doc-table"
+  onClick={(e) => {
+    const td = e.target?.closest?.('td');
+    const code = td?.querySelector?.('code');
+    if (code?.textContent) {
+      navigator.clipboard.writeText(code.textContent);
+      const toast = document.createElement('div');
+      toast.textContent = 'Copied!';
+      toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; font-family: var(--font-family-base, DM Sans), system-ui, sans-serif; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: spacing-copied-toast 0.2s ease;';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1500);
+    }
+  }}
+  title="Click a token to copy"
+>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>rem</th>
+      <th>Base unit multiplier</th>
+      <th>px</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>spacing.00</code></td><td>0</td><td>0</td><td>0</td><td><div className="spacing-doc-bar" style={{width: 0}} /></td></tr>
+    <tr><td><code>spacing.2</code></td><td>0.125</td><td>0.5</td><td>2</td><td><div className="spacing-doc-bar" style={{width: '2px'}} /></td></tr>
+    <tr><td><code>spacing.4</code></td><td>0.25</td><td>1</td><td>4</td><td><div className="spacing-doc-bar" style={{width: '4px'}} /></td></tr>
+    <tr><td><code>spacing.8</code></td><td>0.5</td><td>2</td><td>8</td><td><div className="spacing-doc-bar" style={{width: '8px'}} /></td></tr>
+    <tr><td><code>spacing.12</code></td><td>0.75</td><td>3</td><td>12</td><td><div className="spacing-doc-bar" style={{width: '12px'}} /></td></tr>
+    <tr><td><code>spacing.16</code></td><td>1</td><td>4</td><td>16</td><td><div className="spacing-doc-bar" style={{width: '16px'}} /></td></tr>
+    <tr><td><code>spacing.24</code></td><td>1.5</td><td>6</td><td>24</td><td><div className="spacing-doc-bar" style={{width: '24px'}} /></td></tr>
+    <tr><td><code>spacing.32</code></td><td>2</td><td>8</td><td>32</td><td><div className="spacing-doc-bar" style={{width: '32px'}} /></td></tr>
+    <tr><td><code>spacing.40</code></td><td>2.5</td><td>10</td><td>40</td><td><div className="spacing-doc-bar" style={{width: '40px'}} /></td></tr>
+    <tr><td><code>spacing.48</code></td><td>3</td><td>12</td><td>48</td><td><div className="spacing-doc-bar" style={{width: '48px'}} /></td></tr>
+    <tr><td><code>spacing.64</code></td><td>4</td><td>16</td><td>64</td><td><div className="spacing-doc-bar" style={{width: '64px'}} /></td></tr>
+    <tr><td><code>spacing.80</code></td><td>5</td><td>20</td><td>80</td><td><div className="spacing-doc-bar" style={{width: '80px'}} /></td></tr>
+    <tr><td><code>spacing.96</code></td><td>6</td><td>24</td><td>96</td><td><div className="spacing-doc-bar" style={{width: '96px'}} /></td></tr>
+    <tr><td><code>spacing.112</code></td><td>7</td><td>28</td><td>112</td><td><div className="spacing-doc-bar" style={{width: '112px'}} /></td></tr>
+    <tr><td><code>spacing.128</code></td><td>8</td><td>32</td><td>128</td><td><div className="spacing-doc-bar" style={{width: '128px'}} /></td></tr>
+    <tr><td><code>spacing.160</code></td><td>10</td><td>40</td><td>160</td><td><div className="spacing-doc-bar" style={{width: '160px'}} /></td></tr>
+  </tbody>
+</table>
+
+</div>
