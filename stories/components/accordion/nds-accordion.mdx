@@ -1,0 +1,74 @@
+import { Canvas, Controls, Meta, Source, Story } from '@storybook/blocks';
+import * as AccordionStories from './nds-accordion.stories';
+
+<Meta
+  of={AccordionStories}
+  title="Components/Accordion"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<div style={{ fontFamily: 'var(--font-family-base, \'DM Sans\'), system-ui, sans-serif' }}>
+  # Accordion
+  <p style={{ color: 'var(--color-neutrals-600, #3d3d3d)', marginTop: 8, lineHeight: 1.5, maxWidth: 900 }}>
+    Expand/collapse container used for progressive disclosure. The component follows one consistent visual design and supports sizes.
+  </p>
+</div>
+
+## Playground
+
+<Canvas of={AccordionStories.Playground} />
+<Controls of={AccordionStories.Playground} />
+
+## Usage
+
+<Source
+  language="html"
+  code={`<nds-accordion
+  title="This is panel header"
+  link-text="Hyperlink"
+  link-href="#"
+  size="medium"
+>
+  This is a placeholder text.
+</nds-accordion>`}
+/>
+
+## Sizes
+
+<Story of={AccordionStories.Sizes} />
+
+## Group Accordion
+
+Use `nds-accordion-group` to control open behavior:
+
+- `mode="single"`: only one accordion stays open at a time.
+- `mode="multi"`: multiple accordions can stay open together.
+
+<Canvas of={AccordionStories.Group} />
+<Controls of={AccordionStories.Group} />
+
+<Source
+  language="html"
+  code={`<nds-accordion-group mode="single">
+  <nds-accordion title="This is panel header" open>This is a placeholder text.</nds-accordion>
+  <nds-accordion title="This is panel header">This is a placeholder text.</nds-accordion>
+  <nds-accordion title="This is panel header">This is a placeholder text.</nds-accordion>
+</nds-accordion-group>`}
+/>
+
+## Do
+
+- Use concise header text that clearly describes the hidden content.
+- Keep body content readable and split into short paragraphs.
+- Prefer medium size by default; use small/large only where needed.
+- Use group mode `single` for FAQ-like layouts.
+
+## Don't
+
+- Do not hide critical information users always need to see.
+- Do not over-nest accordion sections.
+- Do not use long vague titles.
+- Do not mix single and multi-open behavior in the same group.
+
