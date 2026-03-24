@@ -9,6 +9,19 @@ body {
   font-family: var(--font-family-base, 'DM Sans'), system-ui, sans-serif;
 }
 
+/* Semantic aliases used by component docs/stories */
+:root {
+  --colors-text-primary: var(--color-neutrals-950, #050505);
+  --colors-text-secondary: var(--color-neutrals-700, #2d2d2d);
+  --colors-action-secondary-text: var(--color-purple-600, #7c38bc);
+  --colors-action-primary-muted-text: var(--color-neutrals-400, #707070);
+  --colors-action-primary-muted-bg: var(--color-neutrals-200, #cacaca);
+  --colors-divider-default: var(--color-alphas-black-a600, rgba(0, 0, 0, 0.1));
+  --surface-elevated-light: var(--color-neutrals-50, #f5f5f5);
+  --colors-surface-raised-gradient-0: rgba(255, 255, 255, 0.06);
+  --colors-surface-raised-gradient-100: rgba(255, 255, 255, 0.04);
+}
+
 /* Single row background for all tables - remove alternating rgb(247, 250, 252) */
 table tbody tr,
 table tbody tr:nth-child(even),
@@ -34,4 +47,14 @@ table thead tr {
   --color-neutrals-800: #f5f5f5;
   --color-neutrals-900: #f5f5f5;
   --color-neutrals-950: #ffffff;
+
+  --colors-text-primary: var(--color-alphas-white-100, #ffffff);
+  --colors-text-secondary: var(--color-neutrals-300, #adadad);
+  --colors-action-secondary-text: var(--color-purple-400, #a571f2);
+  --colors-action-primary-muted-text: var(--color-neutrals-400, #707070);
+  --colors-action-primary-muted-bg: #2d2d2d;
+  --colors-divider-default: var(--color-alphas-white-a500, rgba(255, 255, 255, 0.12));
+  --surface-elevated-light: #1f1f1f;
+  --colors-surface-raised-gradient-0: rgba(255, 255, 255, 0.06);
+  --colors-surface-raised-gradient-100: rgba(255, 255, 255, 0.04);
 }
