@@ -1,34 +1,23 @@
 {
-  "name": "ui-platform",
-  "version": "1.0.0",
+  "name": "@nds/design-system-root",
   "private": true,
-  "description": "Enterprise Web Components design system — framework-agnostic, token-driven, accessible",
-  "type": "module",
-  "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "build:tokens": "npm run build -w packages/tokens",
-    "build:core": "npm run build -w packages/core",
-    "dev:core": "npm run dev -w packages/core",
-    "storybook": "npm run storybook -w packages/core",
-    "build:storybook": "npm run build-storybook -w packages/core",
-    "clean": "npm run clean -w packages/core 2>/dev/null; rm -rf node_modules packages/*/node_modules packages/*/dist"
-  },
   "workspaces": [
-    "packages/tokens",
-    "packages/core",
-    "packages/adapters/react",
-    "packages/adapters/angular",
-    "packages/adapters/vue"
+    "packages/*"
   ],
-  "engines": {
-    "node": ">=18"
+  "scripts": {
+    "tokens:build": "npm run build --workspace @nds/tokens",
+    "tokens:copy": "cp packages/tokens/dist/css/tokens.css docs/tokens.css",
+    "build": "npm run tokens:build && npm run tokens:copy && npm run build --workspace @nds/components",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
   },
-  "keywords": [
-    "web-components",
-    "design-system",
-    "lit",
-    "tokens",
-    "accessibility"
-  ],
-  "license": "UNLICENSED"
+  "devDependencies": {
+    "@storybook/web-components-vite": "8.6.18",
+    "@storybook/addon-essentials": "8.6.18",
+    "storybook": "8.6.18",
+    "lit": "^3.2.0",
+    "typescript": "latest",
+    "vite": "latest",
+    "style-dictionary": "latest"
+  }
 }

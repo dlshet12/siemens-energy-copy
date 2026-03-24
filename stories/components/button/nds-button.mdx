@@ -1,0 +1,50 @@
+import { Canvas, Controls, Meta, Source, Story } from '@storybook/blocks';
+import * as ButtonStories from './nds-button.stories';
+
+<Meta
+  of={ButtonStories}
+  title="Components/Button"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<div style={{ fontFamily: 'var(--font-family-base, \'DM Sans\'), system-ui, sans-serif' }}>
+  # Button
+  <p style={{ color: 'var(--color-neutrals-600, #3d3d3d)', marginTop: 8, lineHeight: 1.5, maxWidth: 900 }}>
+    Standard action trigger supporting multiple variants and sizes. Use controls to test the API and states.
+  </p>
+</div>
+
+## Playground
+
+<Canvas of={ButtonStories.Playground} />
+<Controls of={ButtonStories.Playground} />
+
+## Usage
+
+<Source
+  language="html"
+  code={`<nds-button variant="primary" size="medium" with-icon icon-name="add">Button</nds-button>
+<nds-button variant="secondary" size="small">Button</nds-button>
+<nds-button variant="destructive" size="large" with-icon icon-name="add" disabled>Button</nds-button>`}
+/>
+
+## Variants Matrix
+
+<Story of={ButtonStories.VariantsAndSizes} />
+
+## Do
+
+- Use `variant="primary"` for the main action in a section.
+- Keep button labels short and action-oriented.
+- Use `disabled` only when action is temporarily unavailable.
+- Keep size consistent within related actions.
+
+## Don't
+
+- Do not place multiple primary buttons side-by-side.
+- Do not use destructive style for non-destructive actions.
+- Do not rely on color alone; keep text labels explicit.
+- Do not mix too many sizes in one compact layout.
+

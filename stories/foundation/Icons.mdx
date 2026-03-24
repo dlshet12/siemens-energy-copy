@@ -1,0 +1,22 @@
+import { Meta, Story } from '@storybook/blocks';
+import * as IconsStories from './icons.stories';
+
+<Meta
+  of={IconsStories}
+  title="Foundation/Icons"
+  parameters={{
+    layout: 'fullscreen',
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<div style={{ fontFamily: 'var(--font-family-base, \'DM Sans\'), system-ui, sans-serif' }}>
+  # Icons
+  <p style={{ color: 'var(--color-neutrals-600, #3d3d3d)', marginTop: 8, lineHeight: 1.5, maxWidth: 900 }}>
+    This foundation page uses the official Google Material Icons catalog and displays all project variants:
+    filled, outlined, round, sharp and two-tone. Use `nds-icon` as the single icon primitive across components.
+  </p>
+</div>
+
+<Story of={IconsStories.Catalog} />
+

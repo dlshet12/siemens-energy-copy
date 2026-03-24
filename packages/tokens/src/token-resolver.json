@@ -1,0 +1,12 @@
+{
+  "modifiers": {
+    "theme": {
+      "description": "Light and dark color schemes for component tokens",
+      "default": "light",
+      "contexts": {
+        "light": [{ "$ref": "./light.tokens.json" }],
+        "dark": [{ "$ref": "./dark.tokens.json" }]
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta
+  title="Foundation/Corner Radius"
+  parameters={{
+    docs: { source: { type: 'none' } }
+  }}
+/>
+
+<link rel="stylesheet" href="/tokens.css" />
+
+<style>{`
+  .radius-doc-root {
+    font-family: var(--font-family-base, 'DM Sans'), system-ui, sans-serif;
+    color: var(--color-neutrals-900, #0d0d0d);
+    padding: 0;
+  }
+  .radius-doc-root .system-label {
+    font-size: 14px;
+    color: var(--color-neutrals-500, #525252);
+    margin-bottom: 0.5rem;
+  }
+  .radius-doc-root h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+  .radius-doc-intro {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-neutrals-700, #2d2d2d);
+    margin: 0 0 2rem;
+    max-width: 640px;
+  }
+  .radius-doc-table {
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .radius-doc-table th,
+  .radius-doc-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-neutrals-200, #cacaca);
+    text-align: left;
+  }
+  .radius-doc-table th:nth-child(2),
+  .radius-doc-table th:nth-child(3),
+  .radius-doc-table th:nth-child(4),
+  .radius-doc-table td:nth-child(2),
+  .radius-doc-table td:nth-child(3),
+  .radius-doc-table td:nth-child(4) {
+    text-align: right;
+  }
+  .radius-doc-table th { font-weight: 600; }
+  .radius-doc-table code { font-size: 13px; }
+  .radius-doc-table td:first-child { cursor: pointer; }
+  .radius-doc-table td:first-child:hover { opacity: 0.8; }
+  .radius-doc-example {
+    width: 40px;
+    height: 40px;
+    background: var(--color-neutrals-200, #cacaca);
+    border: 2px solid var(--color-purple-400, #a571f2);
+  }
+  @keyframes radius-copied-toast {
+    from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+`}</style>
+
+<div className="radius-doc-root">
+
+<div className="system-label">Noedra Design System</div>
+
+# Corner Radius
+
+<div className="radius-doc-intro">
+  Radius tokens keep corner rounding consistent across all apps and screens, creating a cohesive and polished visual language. Use them together with focus-radius tokens to subtly highlight the selected element, making it clear which item is currently active, interactive, and ready for user input or action.
+</div>
+
+<table
+  className="radius-doc-table"
+  onClick={(e) => {
+    const code = e.target?.closest?.('td')?.querySelector?.('code');
+    if (code?.textContent) {
+      navigator.clipboard.writeText(code.textContent);
+      const toast = document.createElement('div');
+      toast.textContent = 'Copied!';
+      toast.style.cssText = 'position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); padding: 8px 16px; background: #1a1a1a; color: #fff; font-size: 13px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 10000; animation: radius-copied-toast 0.2s ease;';
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 1500);
+    }
+  }}
+  title="Click a token to copy"
+>
+  <thead>
+    <tr>
+      <th>Token</th>
+      <th>rem</th>
+      <th>Base unit multiplier</th>
+      <th>px</th>
+      <th>Example</th>
+      <th>Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><code>radius.00</code></td><td>0</td><td>0</td><td>0</td><td><div className="radius-doc-example" style={{borderRadius: 0}} /></td><td>No rounding (sharp corners)</td></tr>
+    <tr><td><code>radius.2</code></td><td>0.125</td><td>0.5</td><td>2</td><td><div className="radius-doc-example" style={{borderRadius: '2px'}} /></td><td>Tiny elements (checkboxes, badges)</td></tr>
+    <tr><td><code>radius.4</code></td><td>0.25</td><td>1</td><td>4</td><td><div className="radius-doc-example" style={{borderRadius: '4px'}} /></td><td>Small elements (tags, compact buttons)</td></tr>
+    <tr><td><code>radius.6</code></td><td>0.375</td><td>1.5</td><td>6</td><td><div className="radius-doc-example" style={{borderRadius: '6px'}} /></td><td>Small elements</td></tr>
+    <tr><td><code>radius.8</code></td><td>0.5</td><td>2</td><td>8</td><td><div className="radius-doc-example" style={{borderRadius: '8px'}} /></td><td>Standard components (buttons, inputs)</td></tr>
+    <tr><td><code>radius.10</code></td><td>0.625</td><td>2.5</td><td>10</td><td><div className="radius-doc-example" style={{borderRadius: '10px'}} /></td><td>Focus ring for 8px elements</td></tr>
+    <tr><td><code>radius.12</code></td><td>0.75</td><td>3</td><td>12</td><td><div className="radius-doc-example" style={{borderRadius: '12px'}} /></td><td>Medium containers (cards, dropdowns)</td></tr>
+    <tr><td><code>radius.14</code></td><td>0.875</td><td>3.5</td><td>14</td><td><div className="radius-doc-example" style={{borderRadius: '14px'}} /></td><td>Focus ring for 12px elements</td></tr>
+    <tr><td><code>radius.16</code></td><td>1</td><td>4</td><td>16</td><td><div className="radius-doc-example" style={{borderRadius: '16px'}} /></td><td>Large containers (modals, panels)</td></tr>
+    <tr><td><code>radius.18</code></td><td>1.125</td><td>4.5</td><td>18</td><td><div className="radius-doc-example" style={{borderRadius: '18px'}} /></td><td>Focus ring for 16px elements</td></tr>
+    <tr><td><code>radius.24</code></td><td>1.5</td><td>6</td><td>24</td><td><div className="radius-doc-example" style={{borderRadius: '24px'}} /></td><td>Extra large (video players, special containers)</td></tr>
+    <tr><td><code>radius.full</code></td><td>—</td><td>—</td><td>9999</td><td><div className="radius-doc-example" style={{borderRadius: '9999px'}} /></td><td>Pills, avatars, circular elements</td></tr>
+  </tbody>
+</table>
+
+</div>

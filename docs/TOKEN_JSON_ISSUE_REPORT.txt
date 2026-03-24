@@ -1,0 +1,83 @@
+Design token issues 
+
+A short list of what’s wrong with our tokens and what to change in Figma so themes and token tools work properly.
+
+
+
+Quick summary
+
+- Light/Dark themes – only the base (primitive) tokens are used in code. Theme tokens exist but aren’t connected in the build. Dev will wire this; design can prepare the structure.
+- How theme tokens are set up – Theme tokens (e.g. “Canvas”, “Text”) should point to primitive tokens (e.g. “Neutrals 50”) using aliases, not copy the raw color values. That’s what design tools and the standard expect.
+- Font token type – The base font family token is exported as a generic “string” type. The standard expects a “font family” type. This may need a fix in the plugin/export settings.
+
+
+
+1. Use aliases for theme tokens (Light/Dark)
+
+What’s the issue  
+In our token files, every theme token (e.g. Background, Text, Canvas) has its own full color value (hex/components).  
+The design token standard (and tools like Dispersa) expect theme tokens to reference primitive tokens (e.g. Neutrals 50, Purple 600), not duplicate the value.
+
+What to do in Figma
+
+- For Light and Dark theme tokens (semantic tokens like “Canvas”, “Text”, “Surface”, “Muted”, etc.):
+  - Don’t set a raw color (hex) on the token.
+  - Do set the token to alias/reference the right primitive (e.g. Neutrals 50, Neutrals 900, Alphas White 100).
+- Keep one source of truth: primitives (color palettes, neutrals, alphas) hold the actual colors; theme tokens only point to them.
+
+Why it matters  
+When we switch themes, tools expect to “swap” which primitive a semantic token points to. If theme tokens store full values instead of references, theme switching and some token tools won’t work as intended.
+
+
+
+2. Keep a clear primitive → theme structure
+
+What’s the issue  
+We have one set of primitives and two separate theme files (Light and Dark) that each repeat the same token names with different values. The standard prefers: one base set where semantic tokens reference primitives, and themes override those references (not duplicate full values).
+
+What to do in Figma
+
+- Primitives – One collection/set: all base colors (Purple 50–1000, Neutrals, Red, Green, etc.), no theme mode.
+- Semantic/theme tokens – A separate layer (e.g. “Light” and “Dark” modes or sets) where tokens like “Canvas”, “Text”, “Surface” only use aliases to primitives.
+- Avoid: copying hex values into theme tokens; keep “Canvas” = alias to “Neutrals 50” (Light) and “Neutrals 900” (Dark), etc.
+
+Why it matters  
+This matches how Dispersa and other DTCG tools expect theming to work and avoids “won’t output anything usable” errors.
+
+
+
+3. Font family token type
+
+What’s the issue  
+The main font family token (e.g. “DM Sans”) is exported with type “string”. The design token standard uses a dedicated “font family” type for this.
+
+What to do in Figma
+
+- Check how the font family variable/token is defined and how your export/sync plugin (e.g. Tokens Studio, Figma Variables export) maps it.
+- If the plugin has an option for token type, set the base font family token to “font family” (or equivalent), not “string”.
+- If the plugin doesn’t support it, note it for the dev team so they can fix it in the exported JSON.
+
+
+
+4. What the dev team will fix (no Figma change needed)
+
+- Theme files in the build – Right now only the base primitives file is used to generate CSS. The dev team will add Light/Dark theme files and (where applicable) the resolver so that theme switching works in code.
+- Resolver file – The file that describes “use Light vs Dark” exists but isn’t used in the build yet. Dev will wire it into the pipeline.
+
+You don’t need to change anything in Figma for this; it’s a build/config change.
+
+
+
+5. Checklist for designers
+
+- All Light theme tokens (Canvas, Text, Surface, Muted, etc.) use aliases to primitives, not raw colors.
+- All Dark theme tokens use aliases to primitives, not raw colors.
+- Primitives stay as the single source of truth (no duplicate hex values in semantic tokens).
+- Font family token is set or exported as “font family” type if the plugin supports it.
+- Naming and structure are consistent between Light and Dark (same token names, different alias targets).
+
+
+
+
+- Aliases in Figma: In Variables, set the variable’s value to “Reference” and pick the primitive variable you want.
+- Modes (Light/Dark): Use Figma variable modes or separate sets so each theme only overrides the alias targets, not the structure.
